@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/blog</title>
 </head>
 <style>
@@ -23,7 +22,7 @@ margin: 20px auto 0;
 
 }
 div {
-width: 672px;
+max-width: 672px;
 margin: 0 auto;
 }
 h1 {
@@ -52,8 +51,9 @@ list-style-type: none;
 border: 3px solid rgb(202, 222, 151);
 padding: 10px 20px;
 margin: 20px auto 0;
-width: fit-content;
+max-width: 672px;
 display: flex;
+flex-wrap: wrap;
 justify-content: space-evenly;
 }
 ul.topnav li {
