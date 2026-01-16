@@ -77,7 +77,30 @@ img {
 img:hover {
 box-shadow: 0 0 2px 1px rgb(202, 222, 151);
 }
+h3 {
+    float: right;
+    font-size: small;
+    margin-bottom: 20px;
+    margin-left: 100px;
+}
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', setRandomCatImage)
+async function setRandomCatImage() {
+	const catapi_call = await fetch('https://api.thecatapi.com/v1/images/search?size=small')
+	const catapi_json = await catapi_call.json()
+	const img_url = catapi_json[0].url
+	const img_width = catapi_json[0].width
+	const img_height = catapi_json[0].height
+	const image_elem = document.getElementById('catapi_image_elem')
+	image_elem.src = img_url
+    image_elem.width = img_width
+    image_elem.height = img_height
+    if (img_width >= 672) {
+        location.reload()
+    }
+}
+</script>
 <body>
 <div>
     <ul class="topnav">  
@@ -98,8 +121,9 @@ box-shadow: 0 0 2px 1px rgb(202, 222, 151);
 <li>➵<a href="https://github.com/variidian">github</a></li>
 <li>➵<a href="https://viriidian.itch.io/">itch</a></li>
 <p>Feel free to get in touch! (Especially true if i've met you irl before) My dms on slack are always open too :)</p>
+<h3><i>a random cat image ↓</i></h3>
+<img id="catapi_image_elem"></img>
 <p></p>
-
 
 </ul>
 </div>
