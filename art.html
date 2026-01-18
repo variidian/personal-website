@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
-<title>variidian/projects</title>
+<title>variidian/about</title>
 </head>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+img {
+    float: right;
+    max-width: 100%;
+    height: auto;
+}
+img:hover {
+box-shadow: 0 0 2px 1px rgb(202, 222, 151);
+}
 p {
+margin-top: 10px;
 margin-bottom: 10px;
 color: rgb(255, 255, 255);
 margin: 20px auto 0;
+
 }
 div {
 max-width: 672px;
@@ -18,6 +29,7 @@ margin: 0 auto;
 h1 {
     font-size: xx-large;
     color: rgb(202, 222, 151);
+    margin-bottom: 10px;
 }
 * {
 text-align: left;
@@ -69,34 +81,17 @@ list-style-type: none;
 padding: 0;
 margin: 0;
 }
-img {
-    float: right;
-    margin-top: 15px;
-    margin-bottom: 30px;
+div.gallery {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
 }
-img:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
+img.gallery{
+    max-width: 45%;
+    max-height: 45%;
+    margin-bottom: 10%;
+    border: 3px solid rgb(202, 222, 151);
 }
-div.projectbox {
-background-color: #0f1b19;
-height: 150px;
-}
-div.projectbox:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-h2 {
-font-size: x-large;
-color: rgb(202, 222, 151);
-padding: 20px 20px 0px 20px;
-}
-span {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-p.projectbox {
-padding: 0 20px 20px 20px;
-}
-
 </style>
 <body>
 <div>
@@ -105,19 +100,16 @@ padding: 0 20px 20px 20px;
         <li><a href="projects.html">projects</a></li> 
         <li><a href="socials.html">socials</a></li>
         <li><a href="blog.html">blog</a></li>
+        <li><a href="art.html">art</a></li>
     </ul>
-<h1>variidian/projects <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
-<p>this page is a collection of coded projects ive made and is <a href="https://dictionary.cambridge.org/dictionary/english/in-progress">in progress</a></p>
-<div class="projectbox">
-    <h2><a href="https://github.com/variidian/personal-website">personal-website</a></h2>
-    <p class="projectbox">this website! just some html/css.</p>
-    </div>
-
-<div class="projectbox">
-    <h2><a href="https://viriidian.itch.io/hotel-sim">hotel-sim game</a></h2>
-    <p class="projectbox">a short hotel management simulator game</p>
-    </div>
-
+<h1>variidian/about <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
+<p>a collection of drawings/photographs</p>
+<p></p>
+<div class="gallery">
+<img class="gallery" src="images/1-IMG_0868.jpg" alt="photograph" ></img>
+<img class="gallery" src="images/2-IMG_1616.jpg" alt="photograph"></img>
+<img class="gallery" src="images/3-IMG_1615.jpg" alt="photograph"></img>
+</div>
 </div>
 </body>
 </html>
