@@ -15,14 +15,13 @@
   font-variation-settings: "wdth" 100;
 }
 body {
-  background-color: #1b2725;
-  opacity: 1;
-  background-image: linear-gradient(135deg, #2f3d31 25%, transparent 25%), linear-gradient(225deg, #2f3d31 25%, transparent 25%), linear-gradient(45deg, #2f3d31 25%, transparent 25%), linear-gradient(315deg, #2f3d31 25%, #1b2725 25%);
-  background-position: 17px 0, 17px 0, 0 0, 0 0;
-  background-size: 17px 17px;
-  background-repeat: repeat;
-  margin: 0;
-  padding: 0;
+background-color: #303D32;
+opacity: 1;
+background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
+background-size: 38px 38px;
+background-repeat: repeat;
+margin: 0;
+padding: 0;
 }
 div {
   max-width: 672px;
@@ -78,9 +77,25 @@ ul {
   padding: 0;
   margin: 0;
 }
+img.sidebar {
+  position: absolute;
+  width: auto; 
+  height: auto;
+  z-index: 1000;
+}
+img.sidebar:hover {
+  box-shadow: 0 0 0 0 !important; /* right: 30px !important; top: 25% !important; transform: rotate(60deg) !important;" */
+}
+@media (max-width: 672px) {
+  img.sidebar {
+    display: none;
+  }
+}
 </style>
 </head>
 <body>
+  <img class="sidebar" src="/images/heart.svg" style="right: 30px !important; top: 25% !important;" alt="decor"></img>
+  <img class="sidebar" src="/images/autodraw.svg" style="top: 70% !important; left: 50px !important;" alt="decor"></img>
 <div>
   <ul class="topnav">  
     <li><a href="/">about</a></li>
@@ -101,6 +116,7 @@ ul {
     <li>- drawing! i mostly draw digitally on procreate</li>
   </ul>
   <p>fun fact: my username 'variidian' is a misspelling of the colour viridian green</p>
+  <p></p>
 </div>
 </body>
 </html>
