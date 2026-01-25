@@ -20,7 +20,7 @@ box-shadow: 0 0 2px 1px rgb(202, 222, 151);
 p {
 margin-top: 10px;
 margin-bottom: 10px;
-color: rgb(255, 255, 255);
+color: #fcfade;
 margin: 20px auto 0;
 
 }
@@ -100,8 +100,23 @@ img.gallery{
     margin-bottom: 10%;
     border: 3px solid rgb(202, 222, 151);
 }
+img.sidebar {
+  position: absolute;
+  width: auto; 
+  height: auto;
+  z-index: 1000;
+}
+img.sidebar:hover {
+  box-shadow: 0 0 0 0 !important;
+}
+@media (max-width: 672px) {
+  img.sidebar {
+    display: none;
+  }
+}
 </style>
 <body>
+    <img class="sidebar" src="/images/heart.svg" style="left: 50px !important; top: 25% !important;" alt="decor"></img>
 <div>
     <ul class="topnav">  
         <li><a href="/">about</a></li>
@@ -110,7 +125,7 @@ img.gallery{
         <li><a href="/blog">blog</a></li>
         <li><a href="/art">art</a></li>
     </ul>
-<h1>variidian/about <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
+<h1>variidian/art <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
 <p>a collection of drawings/photographs. click on them to learn more!</p>
 <p></p>
 <a href="/nyc">
