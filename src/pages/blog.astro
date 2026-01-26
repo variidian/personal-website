@@ -1,5 +1,22 @@
 ---
 import Navbar from "../components/navbar.astro"
+import '../styles/global.css'
+import Blogbox from "../components/blogbox.astro"
+import { dateTimeFormat } from "astro/dist/core/logger/core"
+const BlogItems = [
+  {
+    title: "title",
+    description: "description",
+    href: "https://www.merriam-webster.com/dictionary/placeholder",
+    date: "date",
+  },
+  {
+    title: "title",
+    description: "description",
+    href: "https://www.merriam-webster.com/dictionary/placeholder",
+    date: "date",
+  }
+]
 ---
 <!DOCTYPE html>
 <html>
@@ -7,111 +24,20 @@ import Navbar from "../components/navbar.astro"
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/blog</title>
 </head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-img {
-    float: right;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-img:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-p {
-margin-top: 10px;
-margin-bottom: 10px;
-color: #fcfade;
-margin: 20px auto 0;
-
-}
-div {
-max-width: 672px;
-margin: 0 auto;
-}
-h1 {
-    font-size: xx-large;
-    color: rgb(202, 222, 151);
-    margin-bottom: 10px;
-}
-* {
-text-align: left;
-color: rgb(255, 255, 255);
-font-family: "Inconsolata", monospace;
-font-optical-sizing: auto;
-font-variation-settings:
-    "wdth" 100;
-}
-body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
-margin: 0;
-padding: 0;
-}
-a {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-div.blogbox {
-background-color: #0f1b19;
-height: 150px;
-}
-div.blogbox:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-h2 {
-font-size: x-large;
-color: rgb(202, 222, 151);
-padding: 20px 20px 0px 20px;
-}
-span {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-p.blogbox {
-padding: 0 20px 20px 20px;
-}
-p.date {
-padding: 0 20px 0px 20px;
-}
-img.sidebar {
-  position: absolute;
-  width: auto; 
-  height: auto;
-  z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important;
-}
-@media (max-width: 672px) {
-  img.sidebar {
-    display: none;
-  }
-}
-</style>
 <body>
     <img class="sidebar" src="/images/pop.svg" style="right: 250px !important; top: 65% !important; transform: rotate(150deg) !important;" alt="decor"></img>
 <div>
 <Navbar />
 <h1>variidian/blog <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
 <p><i>for the occasional urge to write</i></p>
-<div class="blogbox">
-<h2><a href="">blog title here</a></h2>
-<p class="blogbox">blog description here</p>
-<p class="date"><span>by variidian on (date here)</span></p>
-</div>
-<div class="blogbox">
-    <h2><a href="">blog title here</a></h2>
-    <p class="blogbox">blog description here</p>
-    <p class="date"><span>by variidian on (date here)</span></p>
-    </div>
+{BlogItems.map((item) => (
+  <Blogbox
+  title={item.title}
+  description={item.description}
+  href={item.href}
+  date={item.date}
+  />
+ ))}
 </div>
 </body>
 </html>

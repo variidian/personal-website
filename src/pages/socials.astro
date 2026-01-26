@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/navbar.astro"
+import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html>
@@ -8,73 +9,11 @@ import Navbar from "../components/navbar.astro"
 <title>variidian/socials</title>
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-p {
-margin-bottom: 10px;
-color: #fcfade;
-margin: 20px auto 0;
-}
-div {
-max-width: 672px;
-margin: 0 auto;
-}
-h1 {
-    font-size: xx-large;
-    color: rgb(202, 222, 151);
-}
-* {
-text-align: left;
-color: #fcfade;
-font-family: "Inconsolata", monospace;
-font-optical-sizing: auto;
-font-variation-settings:
-    "wdth" 100;
-}
-body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
-margin: 0;
-padding: 0;
-}
-a {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-img {
-    float: right;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-img:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
 h3 {
     float: right;
     font-size: small;
     margin-bottom: 20px;
     margin-left: 100px;
-}
-img.sidebar {
-  position: absolute;
-  width: auto; 
-  height: auto;
-  z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important;
-}
-@media (max-width: 672px) {
-  img.sidebar {
-    display: none;
-  }
 }
 </style>
 <script>

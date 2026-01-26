@@ -1,79 +1,11 @@
 ---
 import Navbar from '../components/navbar.astro';
+import '../styles/global.css';
 ---
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 user-scalable=no">
 <title>variidian/about</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-* {
-  text-align: left;
-  color: rgb(255, 255, 255);
-  font-family: "Inconsolata", monospace;
-  font-optical-sizing: auto;
-  font-variation-settings: "wdth" 100;
-}
-body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
-margin: 0;
-padding: 0;
-}
-div {
-  max-width: 672px;
-  margin: 0 auto;
-}
-h1 {
-  font-size: xx-large;
-  color: rgb(202, 222, 151);
-  margin-bottom: 10px;
-}
-img {
-  float: right;
-  margin-top: 15px;
-  margin-bottom: 30px;
-  max-width: 100%;
-  height: auto;
-}
-img:hover {
-  box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-p {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #fcfade;
-  margin: 20px auto 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-img.sidebar {
-  position: absolute;
-  width: auto; 
-  height: auto;
-  z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important; /* right: 30px !important; top: 25% !important; transform: rotate(60deg) !important;" */
-}
-@media (max-width: 672px) {
-  img.sidebar {
-    display: none;
-  }
-}
-ul li{
-  color: #fcfade;
-}
-ul li a {
-  color: rgb(202, 222, 151);;
-}
-</style>
 </head>
 <body>
   <img class="sidebar" src="/images/heart.svg" style="right: 30px !important; top: 25% !important;" alt="decor"></img>
@@ -85,7 +17,7 @@ ul li a {
   <img src="/images/shaw_art.png" alt="shaw art">
   <p>Apart from coding, things i like include:</p>
   <ul>
-    <li>- videogames! - minecraft, pokemon, botw, hollowknight and peak come to mind (i've played more than just those though - ask!) - although i haven't played much of the last two :pensive-wobble:</li>
+    <li>- videogames! - minecraft, pokemon, botw, hollowknight and peak come to mind (i've played more than just those though - ask!) - haven't played much of the last two though :pensive-wobble:</li>
     <li>- plushies - imo you can never have too many - blahaj. blhaj. bhalaj. </li>
     <li>- Books >> movies - sci-fi and fantasy! - off the top of my head <a href="https://www.goodreads.com/book/show/28954189-scythe">Arc of a Scythe</a> was pretty good, Although i do remember enjoying <a href="https://en.wikipedia.org/wiki/Wings_of_Fire_(novel_series)">Wings of Fire</a> and <a href="https://en.wikipedia.org/wiki/Warriors_(novel_series)">Warrior Cats</a> in 2022</li>
     <li>- the time between 11pm and sunrise. Its always so calm and peaceful :3 - vibes to hippo campus also go hard here ^^</li>

@@ -1,0 +1,33 @@
+---  
+interface Props {  
+  title: string;  
+  description: string;  
+  href: string;  
+}  
+  
+const { title, description, href } = Astro.props;  
+---  
+<style>
+div.projectbox {
+background-color: #0f1b19;
+height: 150px;
+border: #08100f 3px solid;
+margin-bottom: 15px;
+margin-top: 15px;
+}
+div.projectbox:hover {
+box-shadow: 0 0 2px 1px rgb(202, 222, 151);
+}
+h2 {
+font-size: x-large;
+color: rgb(202, 222, 151);
+padding: 10px 20px 0px 20px;
+}
+p.projectbox {
+padding: 0 20px 20px 20px;
+}
+</style>
+<div class="projectbox">
+    <h2><a href={href}>{title}</a></h2>
+    <p class="projectbox">{description}</p>
+    </div>

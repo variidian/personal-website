@@ -1,5 +1,24 @@
 ---
 import Navbar from "../components/navbar.astro"
+import '../styles/global.css';
+import Projectbox from "../components/projectbox.astro";
+const ProjectItems = [
+  {
+    title: "personal-website",
+    description: "this website! astro :3",
+    href: "https://github.com/variidian/personal-website"
+  },
+  {
+    title: "hotel-sim game",
+    description: "a short hotel management simulator game made in godot. slightly scuffed.",
+    href: "https://viriidian.itch.io/hotel-sim"
+  },
+  {
+    title: "placeholder title",
+    description: "placeholder description",
+    href: "https://www.merriam-webster.com/dictionary/placeholder"
+  }
+]
 ---
 <!DOCTYPE html>
 <html>
@@ -7,106 +26,19 @@ import Navbar from "../components/navbar.astro"
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/projects</title>
 </head>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-p {
-margin-bottom: 10px;
-color: #fcfade;
-margin: 20px auto 0;
-}
-div {
-max-width: 672px;
-margin: 0 auto;
-}
-h1 {
-    font-size: xx-large;
-    color: rgb(202, 222, 151);
-}
-* {
-text-align: left;
-color: rgb(255, 255, 255);
-font-family: "Inconsolata", monospace;
-font-optical-sizing: auto;
-font-variation-settings:
-    "wdth" 100;
-}
-body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
-margin: 0;
-padding: 0;
-}
-a {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
-img {
-    float: right;
-    margin-top: 15px;
-    margin-bottom: 30px;
-}
-img:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-div.projectbox {
-background-color: #0f1b19;
-height: 150px;
-border: #08100f 3px solid;
-margin-bottom: 15px;
-margin-top: 15px;
-}
-div.projectbox:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-h2 {
-font-size: x-large;
-color: rgb(202, 222, 151);
-padding: 20px 20px 0px 20px;
-}
-span {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-p.projectbox {
-padding: 0 20px 20px 20px;
-}
-img.sidebar {
-  position: absolute;
-  width: auto; 
-  height: auto;
-  z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important;
-}
-@media (max-width: 672px) {
-  img.sidebar {
-    display: none;
-  }
-}
-</style>
 <body>
     <img class="sidebar" src="/images/pop.svg" style="right: 75px !important; top: 10% !important; transform: rotate(15deg) !important;" alt="decor"></img>
 <div>
 <Navbar />
 <h1>variidian/projects <img src="images/persona1.png" alt="tiny human"></img></h1>
 <p>this page is a collection of coded projects ive made and is <a href="https://dictionary.cambridge.org/dictionary/english/in-progress">in progress</a></p>
-<div class="projectbox">
-    <h2><a href="https://github.com/variidian/personal-website">personal-website</a></h2>
-    <p class="projectbox">this website! astro :3</p>
-    </div>
-<div class="projectbox">
-    <h2><a href="https://viriidian.itch.io/hotel-sim">hotel-sim game</a></h2>
-    <p class="projectbox">a short hotel management simulator game made in godot. slightly scuffed.</p>
-    </div>
+{ProjectItems.map((item) => (
+ <Projectbox 
+ title={item.title}
+ description={item.description}
+ href={item.href}
+ />
+))}
 </div>
 </body>
 </html>

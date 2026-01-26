@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/navbar.astro"
+import '../styles/global.css';
 ---
 <!DOCTYPE html>
 <html>
@@ -9,57 +10,6 @@ import Navbar from "../components/navbar.astro"
 <title>variidian/about</title>
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-img {
-    float: right;
-    max-width: 100%;
-    height: auto;
-}
-img:hover {
-box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
-p {
-margin-top: 10px;
-margin-bottom: 10px;
-color: #fcfade;
-margin: 20px auto 0;
-
-}
-div {
-max-width: 672px;
-margin: 0 auto;
-}
-h1 {
-    font-size: xx-large;
-    color: rgb(202, 222, 151);
-    margin-bottom: 10px;
-}
-* {
-text-align: left;
-color: rgb(255, 255, 255);
-font-family: "Inconsolata", monospace;
-font-optical-sizing: auto;
-font-variation-settings:
-    "wdth" 100;
-}
-body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
-margin: 0;
-padding: 0;
-}
-a {
-color: rgb(202, 222, 151);
-font-style: italic;
-}
-ul {
-list-style-type: none;
-padding: 0;
-margin: 0;
-}
 div.gallery {
 display: flex;
 flex-wrap: wrap;
@@ -75,20 +25,6 @@ img.gallery{
     max-height: 45%;
     margin-bottom: 10%;
     border: 3px solid rgb(202, 222, 151);
-}
-img.sidebar {
-  position: absolute;
-  width: auto; 
-  height: auto;
-  z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important;
-}
-@media (max-width: 672px) {
-  img.sidebar {
-    display: none;
-  }
 }
 </style>
 <body>
