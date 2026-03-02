@@ -7,17 +7,34 @@
   font-variation-settings: "wdth" 100;
 }
 body {
-background-color: #303D32;
-opacity: 1;
-background-image:  linear-gradient(#1B2725 1.9000000000000001px, transparent 1.9000000000000001px), linear-gradient(to right, #1B2725 1.9000000000000001px, #303D32 1.9000000000000001px);
-background-size: 38px 38px;
-background-repeat: repeat;
 margin: 0;
 padding: 0;
 }
-div {
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+  grid-auto-rows: 38px;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.cell {
+  border: 1.5px solid #313d33;
+  background-color: #1b2725;
+  transition: background 0.2s;
+}
+
+.cell:hover {
+  background-color: #4d5f53;
+}
+.content {
   max-width: 672px;
   margin: 0 auto;
+  position: relative; 
+  z-index: 20;
 }
 h1 {
   font-size: xx-large;

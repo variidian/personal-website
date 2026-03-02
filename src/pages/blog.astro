@@ -18,18 +18,23 @@ const BlogItems = [
   }
 ]
 ---
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/blog</title>
-</head>
-<body>
-    <img class="sidebar" src="/images/pop.svg" style="right: 250px !important; top: 65% !important; transform: rotate(150deg) !important;" alt="decor"></img>
-<div>
+
+<div class="grid">
+  {Array.from({ length: 800 }).map(() => (
+    <div class="cell"></div>
+  ))}
+</div>
+
+<img class="sidebar" src="/images/pop.svg" style="right: 250px !important; top: 65% !important; transform: rotate(150deg) !important;" alt="decor"></img>
+
+<div class="content">
 <Navbar />
+
 <h1>variidian/blog <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
 <p><i>for the occasional urge to write</i></p>
+
 {BlogItems.map((item) => (
   <Blogbox
   title={item.title}
@@ -38,6 +43,5 @@ const BlogItems = [
   date={item.date}
   />
  ))}
+ 
 </div>
-</body>
-</html>

@@ -2,12 +2,9 @@
 import Navbar from "../components/navbar.astro"
 import '../styles/global.css';
 ---
-<!DOCTYPE html>
-<html>
-<head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/socials</title>
-</head>
 <style>
 h3 {
     float: right;
@@ -20,7 +17,7 @@ h3 {
 document.addEventListener('DOMContentLoaded', setRandomCatImage)
 async function setRandomCatImage() {
   let attempts = 0;
-  while (attempts <= 1) {
+  while (attempts <= 10) {
 	const catapi_call = await fetch('https://api.thecatapi.com/v1/images/search?size=small')
 	const catapi_json = await catapi_call.json()
 	const img_url = catapi_json[0].url
@@ -28,23 +25,29 @@ async function setRandomCatImage() {
 	const img_height = catapi_json[0].height
     if (img_width <= 672) {
       const image_elem = document.getElementById('catapi_image_elem') as HTMLImageElement
-  if (image_elem) {
-	  image_elem.src = img_url
-    image_elem.width = img_width
-    image_elem.height = img_height
-  }
+      if (image_elem) {
+	      image_elem.src = img_url
+        image_elem.width = img_width
+        image_elem.height = img_height
+     }
   return
     }
+  attempts++
 }
 }
 </script>
-<body>
     <img class="sidebar" src="/images/moon.svg" style="left: 30px !important; top: 20% !important;" alt="decor"></img>
     <img class="sidebar" src="/images/autodraw.svg" style="right: 80px !important; top: 70% !important;" alt="decor"></img>
-<div>
+    
+    <div class="grid">
+      {Array.from({ length: 800 }).map(() => (
+        <div class="cell"></div>
+      ))}
+    </div>
+    <div class="content">
+      
   <Navbar />
 <h1>variidian/socials <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
-
 
 <p>my usernames are mostly the same across these platforms, but here they are:</p>
 <ul>
@@ -58,8 +61,5 @@ async function setRandomCatImage() {
 <h3><i>a random cat image using cat api!</i></h3>
 <img id="catapi_image_elem"></img>
 <p></p>
-
 </ul>
 </div>
-</body>
-</html>

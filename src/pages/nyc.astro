@@ -2,12 +2,9 @@
 import Navbar from "../components/navbar.astro"
 import '../styles/global.css';
 ---
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/about</title>
-</head>
+
 <style>
 div.gallery {
 display: flex;
@@ -21,11 +18,20 @@ img.gallery{
     border: 3px solid rgb(202, 222, 151);
 }
 </style>
-<body>
-<div>
+
+<div class="grid">
+    {Array.from({ length: 800 }).map(() => (
+      <div class="cell"></div>
+    ))}
+  </div>
+
+<div class="content">
+
 <Navbar />
+
 <h1>variidian/art/new_york <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
-<p>Those photos you saw on the previous page were taken during my time in New York, and edited a few months later in Adobe Lightroom. For three days in mid November, i was at <a href="https://parthenon.hackclub.com/">Parthenon</a>, a hackathon hosted by Hack Club as apart of the Athena Initiative. Below, are some photos :3</p>
+<p>New York! For three days in mid November, i was at <a href="https://parthenon.hackclub.com/">Parthenon</a>, a hackathon hosted by Hack Club as apart of the Athena Initiative. Below, are some photos :3</p>
+
 <div class="gallery">
     <img class="gallery" src="images/IMG_2849.jpeg" alt="group photo" ></img>
     <img class="gallery" src="images/IMG_2792.jpeg" alt="group photo" ></img>
@@ -40,5 +46,3 @@ img.gallery{
     <img class="gallery" src="images/d.jpeg" alt="birbo statue" ></img>
     <img class="gallery" src="images/e.jpeg" alt="left to right: me, joanna" ></img>
 </div>
-</body>
-</html>

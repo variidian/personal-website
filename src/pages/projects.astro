@@ -10,28 +10,33 @@ const ProjectItems = [
   },
   {
     title: "hotel-sim game",
-    description: "a short hotel management simulator game made in godot. slightly scuffed.",
+    description: "a short hotel management simulator game made in godot. slightly scuffed : [",
     href: "https://viriidian.itch.io/hotel-sim"
   },
   {
-    title: "placeholder title",
-    description: "placeholder description",
-    href: "https://www.merriam-webster.com/dictionary/placeholder"
+    title: "kolourmeans",
+    description: "an application that turns a location selected on a satellite map into a colour scheme :]",
+    href: "https://github.com/variidian/kolourmeans"
   }
 ]
 ---
-<!DOCTYPE html>
-<html>
-<head>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/projects</title>
-</head>
+
+<div class="grid">
+  {Array.from({ length: 800 }).map(() => (
+    <div class="cell"></div>
+  ))}
+</div>
+
 <body>
     <img class="sidebar" src="/images/pop.svg" style="right: 75px !important; top: 10% !important; transform: rotate(15deg) !important;" alt="decor"></img>
-<div>
+
+    <div class="content">
 <Navbar />
 <h1>variidian/projects <img src="images/persona1.png" alt="tiny human"></img></h1>
-<p>this page is a collection of coded projects ive made and is <a href="https://dictionary.cambridge.org/dictionary/english/in-progress">in progress</a></p>
+<p>a collection of projects i've made :]</a></p>
+
 {ProjectItems.map((item) => (
  <Projectbox 
  title={item.title}
@@ -39,6 +44,5 @@ const ProjectItems = [
  href={item.href}
  />
 ))}
+
 </div>
-</body>
-</html>

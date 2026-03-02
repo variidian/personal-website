@@ -3,17 +3,15 @@ import Navbar from "../components/navbar.astro"
 import '../styles/global.css';
 ---
 <!DOCTYPE html>
-<html>
-<head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/about</title>
-</head>
 <style>
 div.gallery {
 display: flex;
 flex-wrap: wrap;
 justify-content: space-between;
+max-width: 672px;
+margin: 0 auto;
 }
 div.gallery a {
 display: flex;
@@ -27,13 +25,16 @@ img.gallery{
     border: 3px solid rgb(202, 222, 151);
 }
 </style>
-<body>
+<div class="grid">
+    {Array.from({ length: 800 }).map(() => (
+      <div class="cell"></div>
+    ))}
+  </div>
     <img class="sidebar" src="/images/heart.svg" style="left: 50px !important; top: 25% !important;" alt="decor"></img>
-<div>
+<div class="content">
 <Navbar />
-<h1>variidian/art <img src="images/persona1.png" alt="a tiny persona i drew"></img></h1>
+<h1>variidian/art <img src="images/persona1.png" alt="a tiny persona i drew" style="margin: 0 !important;"></img></h1>
 <p>a collection of drawings/photographs. click on them to learn more!</p>
-<p></p>
 <a href="/nyc">
 <div class="gallery">
 <img class="gallery" src="images/1-IMG_0868.jpg" alt="photograph i took during parthenon - a hackathon in nyc" ></img>
@@ -45,5 +46,3 @@ img.gallery{
 <img class="gallery" src="images/person.png" alt="oc drawing"></img>
 </div>
 </div>
-</body>
-</html>
