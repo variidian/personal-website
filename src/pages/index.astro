@@ -18,28 +18,31 @@ import '../styles/global.css';
   <Navbar />
 
   <h1>variidian/about <img src="/images/persona1.png" alt="a tiny persona i drew"></h1>
-  <p>hihi! I go by variidian/shurui (she/her) and am a 14 y/o from Sydney, Australia :p</p>
+  <p>heyo! I go by variidian/shurui (she/her) and am a 14 y/o from Sydney, Australia :p</p>
   
   <img src="/images/shaw_art.png" alt="shaw art">
 
   <p>Apart from coding, things i like include:</p>
 
   <ul>
-    <li>- videogames! - minecraft, pokemon, botw, hollowknight and peak come to mind (i've played more than just those though - ask!) - haven't played much of the last two though :pensive-wobble:</li>
+    <li>- videogames! - minecraft, pokemon, botw, hollowknight and peak come to mind- haven't played much of the last two though :pensive-wobble:</li>
     <li>- plushies - imo you can never have too many - blahaj. blhaj. bhalaj. </li>
-    <li>- Books >> movies - sci-fi and fantasy! - off the top of my head <a href="https://www.goodreads.com/book/show/28954189-scythe">Arc of a Scythe</a> was pretty good, Although i do remember enjoying <a href="https://en.wikipedia.org/wiki/Wings_of_Fire_(novel_series)">Wings of Fire</a> and <a href="https://en.wikipedia.org/wiki/Warriors_(novel_series)">Warrior Cats</a> in 2022</li>
+    <li>- Books >> movies - sci-fi and fantasy! - off the top of my head i do remember enjoying <a href="https://en.wikipedia.org/wiki/Wings_of_Fire_(novel_series)">Wings of Fire</a> and <a href="https://en.wikipedia.org/wiki/Warriors_(novel_series)">Warrior Cats</a> back in 2022 :] wow its been a few years.</li>
     <li>- the time between 11pm and sunrise. Its always so calm and peaceful :3 - vibes to hippo campus also go hard here ^^</li>
-    <li>- drawing! i mostly draw digitally on <a href="https://procreate.com/">procreate</a>, however i sometimes draw traditionally!</a></li>
+    <li>- art! i mostly draw digitally on <a href="https://procreate.com/">procreate</a>, however i sometimes make some stuff on clothing :]</a></li>
+    <li id="lastfm_Text">- music! <s>not an addict</s> currently, i'm not listening to anything.</li>
   </ul>
-<p id="lastfm_Text">currently, i'm not listening to anything, although, you can check me out at https://www.last.fm/user/variidian.</p>
-  <p>fun fact: my username 'variidian' is a misspelling of the colour viridian green</p>
+  <p><i id="funfact">fun fact</i></p>
   <p></p>
 </div>
-<script type="module">
+<script>
 const response = await fetch('/api/lastfm');
 const data = await response.json();
 const latestTrack = data.recenttracks.track[0];
 if (latestTrack['@attr'].nowplaying === 'true') {
-  document.getElementById("lastfm_Text").innerHTML = `i'm currently listening to ${latestTrack.name} by ${latestTrack.artist['#text']}`;
+  document.getElementById("lastfm_Text").innerHTML = `- music! infact, i'm currently listening to <i>${latestTrack.name} by ${latestTrack.artist['#text']}.</i>`;
 }
+const options = ["fun fact: my username 'variidian' is a misspelling of the colour viridian green :]","fun fact: my favo(u)rite colour is green :>","fun fact: Some Fun Fact(tm)"]
+const randomIndex = Math.floor(Math.random() * options.length);
+document.getElementById("funfact").innerHTML= options[randomIndex];
 </script>
