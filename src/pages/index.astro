@@ -31,7 +31,15 @@ import '../styles/global.css';
     <li>- the time between 11pm and sunrise. Its always so calm and peaceful :3 - vibes to hippo campus also go hard here ^^</li>
     <li>- drawing! i mostly draw digitally on <a href="https://procreate.com/">procreate</a>, however i sometimes draw traditionally!</a></li>
   </ul>
-
+<p id="lastfm_Text">currently, i'm not listening to anything, although, you can check me out at https://www.last.fm/user/variidian.</p>
   <p>fun fact: my username 'variidian' is a misspelling of the colour viridian green</p>
   <p></p>
 </div>
+<script type="module">
+const response = await fetch('/api/lastfm');
+const data = await response.json();
+const latestTrack = data.recenttracks.track[0];
+if (latestTrack['@attr'].nowplaying === 'true') {
+  document.getElementById("lastfm_Text").innerHTML = `i'm currently listening to ${latestTrack.name} by ${latestTrack.artist['#text']}`;
+}
+</script>

@@ -62,9 +62,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-img:hover {
-  box-shadow: 0 0 2px 1px rgb(202, 222, 151);
-}
 p {
   margin-top: 10px;
   margin-bottom: 10px;

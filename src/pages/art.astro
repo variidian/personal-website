@@ -19,10 +19,11 @@ flex-wrap: wrap;
 justify-content: space-between;
 }
 img.gallery{
-    max-width: 45%;
-    max-height: 45%;
+    max-width: 20%; 
+    height: auto;
     margin-bottom: 10%;
-    border: 3px solid rgb(202, 222, 151);
+    object-fit: contain;
+    display: block;
 }
 </style>
 <div class="grid">
@@ -34,7 +35,7 @@ img.gallery{
 <div class="content">
 <Navbar />
 <h1>variidian/art <img src="images/persona1.png" alt="a tiny persona i drew" style="margin: 0 !important;"></img></h1>
-<p>a collection of drawings/photographs. click on them to learn more!</p>
+<p>a collection of drawings/photographs. on some of them, you can click to learn more!</p>
 <a href="/nyc">
 <div class="gallery">
 <img class="gallery" src="images/1-IMG_0868.jpg" alt="photograph i took during parthenon - a hackathon in nyc" ></img>
@@ -44,5 +45,10 @@ img.gallery{
 </a>
 <img class="gallery" src="images/croissant.png" alt="croissant drawing"></img>
 <img class="gallery" src="images/person.png" alt="oc drawing"></img>
+<img class="gallery" src="images/grass.png" alt="grass"></img>
+<img class="gallery" src="images/grapes.png" alt="grapes"></img>
+<img class="gallery" src="images/sky.png" alt="sky"></img>
+<img class="gallery" src="images/" alt="image"></img>
+
 </div>
 </div>
