@@ -9,6 +9,26 @@
 body {
 margin: 40px 0 40px 0;
 padding: 0;
+cursor: none;
+}
+.cursor {
+  z-index: 9999;
+  position: fixed;
+  pointer-events: none;
+  width: 48px;
+  height: 48px;
+  background-image: url('/cursor/cursor.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: spin 1.5s infinite;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(90deg);
+  }
 }
 .grid {
   display: grid;
