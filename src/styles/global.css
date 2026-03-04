@@ -52,7 +52,7 @@ cursor: none;
   border: 1.5px solid #313d33; /*fills up the spaces made by the grid + hover animation*/
   background-color: #1b2725;
   transition: background 0.2s;
-  animation: hover 0.5s forwards paused;
+  animation: hover 0.3s forwards paused;
 }
 
 .cell:hover {
@@ -61,8 +61,8 @@ cursor: none;
 }
 @keyframes hover { /*hover anim colour change of cells*/
   0% { background-color: #1b2725; }
-  1% { background-color: #4d5f53; }
-  50% { background-color: #4d5f53; }
+  20% { background-color: #4d5f53; }
+  40% { background-color: #4d5f53; }
   100% { background-color: #1b2725; }
 }
 .content { /*the box all the main stuff sits in*/

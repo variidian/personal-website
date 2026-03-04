@@ -2,7 +2,6 @@
 const cursor = document.getElementById('cursor');
 const cursorInner = document.getElementById('cursor-inner');
 const links = document.querySelectorAll('a, .sidebar');
-
 document.addEventListener('mousemove', (event) => {
     //find pos of cursor
     const mouseX = event.clientX;
@@ -34,3 +33,12 @@ document.addEventListener('mousemove', (event) => {
         });
     });
 
+    function resetbg() {
+        const cells = document.getElementsByClassName("cell");
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].style.animationName = 'none';
+            void cells[i].offsetWidth; // force reflow
+            cells[i].style.animationName = 'hover';
+        }
+    }    
+let intervalId = setInterval(resetbg, 15000);
