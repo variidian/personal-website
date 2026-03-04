@@ -6,12 +6,13 @@
   font-optical-sizing: auto;
   font-variation-settings: "wdth" 100;
 }
-body {
+body { /*spacing between top + bottom of page before content div*/
 margin: 40px 0 40px 0;
 padding: 0;
 cursor: none;
 }
-#cursor {
+
+#cursor { /*cursor outside is for position + resizing/stretching + colour filter*/
   position: fixed;
   pointer-events: none;
   width: 48px;
@@ -21,7 +22,7 @@ cursor: none;
   z-index: 9999;
 }
 
-#cursor-inner {
+#cursor-inner { /* cursor inner is for actual image + handling animation (spin) */
   width: 100%;
   height: 100%;
   background-image: url('/cursor/cursor.png');
@@ -32,11 +33,11 @@ cursor: none;
   transition: transform 0.3s ease;
 }
 
-@keyframes spin {
+@keyframes spin { /* spin is started and stopped in the javascript*/
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-.grid {
+.grid { /*grid to make the spaces of the background (fills up columns + rows with correct sizing)*/
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
   grid-auto-rows: 38px;
@@ -47,23 +48,24 @@ cursor: none;
   z-index: 10;
 }
 
-.cell {
-  border: 1.5px solid #313d33;
+.cell { 
+  border: 1.5px solid #313d33; /*fills up the spaces made by the grid + hover animation*/
   background-color: #1b2725;
   transition: background 0.2s;
   animation: hover 0.5s forwards paused;
 }
 
 .cell:hover {
-  animation-play-state: running;
+  animation-play-state: running; /*on hover, anim runs and saves what point
+   its at w forwards if clicked off*/
 }
-@keyframes hover {
+@keyframes hover { /*hover anim colour change of cells*/
   0% { background-color: #1b2725; }
   1% { background-color: #4d5f53; }
   50% { background-color: #4d5f53; }
   100% { background-color: #1b2725; }
 }
-.content {
+.content { /*the box all the main stuff sits in*/
   max-width: 672px;
   margin: 0 auto;
   position: relative; 
@@ -104,9 +106,6 @@ img.sidebar {
   width: auto; 
   height: auto;
   z-index: 1000;
-}
-img.sidebar:hover {
-  box-shadow: 0 0 0 0 !important; /* right: 30px !important; top: 25% !important; transform: rotate(60deg) !important;" */
 }
 @media (max-width: 672px) {
   img.sidebar {
