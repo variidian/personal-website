@@ -1,7 +1,6 @@
-
-
 const cursor = document.getElementById('cursor');
-const links = document.querySelectorAll("a");
+const cursorInner = document.getElementById('cursor-inner');
+const links = document.querySelectorAll('a, .sidebar');
 document.addEventListener('mousemove', (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
@@ -12,19 +11,20 @@ document.addEventListener('mousemove', (event) => {
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
             const rect = link.getBoundingClientRect();
-            const correctheight = rect.height / 2
-            cursor.style.width = `${correctheight}px`;
+            cursor.style.width = `${rect.width}px`;
             cursor.style.height = `${rect.height}px`;
-            cursor.style.transform = `translate(-50%, -50%) rotate(0deg)`;
-            cursor.style.animationPlayState = "paused";
-            cursor.style.filter = 'hue-rotate(180deg) saturate(200%) brightness(150%)';
+            
+            cursorInner.style.animation = '';
+            cursorInner.style.transform = 'rotate(0deg)';
+            cursor.style.filter = 'brightness(60%)';
         });
     
         link.addEventListener('mouseleave', () => { 
             cursor.style.height = '48px';
             cursor.style.width = '48px';
-            cursor.style.animationPlayState = "running";
-            cursor.style.transform = `translate(-50%, -50%)`;
+
+            cursorInner.style.transform = 'rotate(0deg)';
+            cursorInner.style.animation = 'spin 1.5s linear infinite';
 
         });
     });
