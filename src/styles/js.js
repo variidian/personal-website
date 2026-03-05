@@ -33,12 +33,25 @@ document.addEventListener('mousemove', (event) => {
         });
     });
 
-    function resetbg() {
+    function fade() {
         const cells = document.getElementsByClassName("cell");
         for (let i = 0; i < cells.length; i++) {
-            cells[i].style.animationName = 'none';
-            void cells[i].offsetWidth; // force reflow
-            cells[i].style.animationName = 'hover';
+            cells[i].style.animationName = "hover";
+            cells[i].style.animationPlayState = 'running';
+            cells[i].style.animationDuration = "2s";
         }
     }    
-let intervalId = setInterval(resetbg, 15000);
+    function reset() {
+        const cells = document.getElementsByClassName("cell");
+        for (let i = 0; i < cells.length; i++) {
+            cells[i].style.animationName = "none";
+            void cells[i].offsetWidth; // force reflow
+            cells[i].style.animationName = "hover";
+            cells[i].style.animationPlayState = "paused";
+            cells[i].style.animationDuration = "0.3s";
+        }
+    }
+    setInterval(() => {
+        fade();
+        setTimeout(reset, 2000);
+    }, 15000);
