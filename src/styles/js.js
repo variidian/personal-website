@@ -45,10 +45,8 @@ document.addEventListener('mousemove', (event) => {
         const cells = document.getElementsByClassName("cell");
         for (let i = 0; i < cells.length; i++) {
             cells[i].style.animationName = "none";
-            void cells[i].offsetWidth; // force reflow
-            cells[i].style.animationName = "hover";
-            cells[i].style.animationPlayState = "paused";
-            cells[i].style.animationDuration = "0.3s";
+            void cells[i].offsetWidth; /*reflow */
+            cells[i].style.animation = "";
         }
     }
     setInterval(() => {
