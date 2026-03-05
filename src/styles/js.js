@@ -36,20 +36,27 @@ document.addEventListener('mousemove', (event) => {
     function fade() {
         const cells = document.getElementsByClassName("cell");
         for (let i = 0; i < cells.length; i++) {
+            let delay = i * 5;
+            setTimeout(() => {
             cells[i].style.animationName = "hover";
             cells[i].style.animationPlayState = 'running';
-            cells[i].style.animationDuration = "2s";
+            cells[i].style.animationDuration = "1s";
+            },delay);
         }
     }    
     function reset() {
         const cells = document.getElementsByClassName("cell");
         for (let i = 0; i < cells.length; i++) {
+            let delay = i * 5;
+            setTimeout(() => {
             cells[i].style.animationName = "none";
             void cells[i].offsetWidth; /*reflow */
             cells[i].style.animation = "";
-        }
-    }
-    setInterval(() => {
+            
+        },delay);
+    }}
+    function run() {
         fade();
-        setTimeout(reset, 2000);
-    }, 15000);
+        reset();
+    }
+    setInterval(run, 15000);
