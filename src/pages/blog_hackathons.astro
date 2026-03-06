@@ -1,0 +1,29 @@
+---
+import Navbar from '../components/navbar.astro';
+import '../styles/global.css';
+---
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 user-scalable=no">
+<title>variidian/about</title>
+
+<div class="grid">
+  {Array.from({ length: 800 }).map(() => (
+    <div class="cell"></div>
+  ))}
+</div>
+
+  <img class="sidebar" src="/images/heart.svg" style="right: 30px !important; top: 25% !important;" alt="decor"></img>
+  <img class="sidebar" src="/images/autodraw.svg" style="top: 70% !important; left: 50px !important;" alt="decor"></img>
+  <div class="content">
+
+  <Navbar />
+
+  <h1>variidian/the hackathon experience <img src="/images/persona1.png" alt="a tiny persona i drew"></h1>
+  <span>in which i yap about hackathons from an attendee perspective</span>
+  <h3>-----------------------------------------------------------</h3>
+  <p>If you don't know, a hackathon is a social event where people come together to build projects for fun over a short period of days and share them with the world. Together, we're artists, writers, engineers and tinkerers, making things.</p>
+  <p>holy shit, they're so much fun. the people we meet & the adventures we go on make these events so special, one of a kind even. insert more yap. when i get to finish writing this.</p>
+</div>
+<script src="../styles/js.js"></script> 
+<div id="cursor">
+  <div id="cursor-inner"></div>
+</div>

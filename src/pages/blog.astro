@@ -5,10 +5,10 @@ import Blogbox from "../components/blogbox.astro"
 import { dateTimeFormat } from "astro/dist/core/logger/core"
 const BlogItems = [
   {
-    title: "title",
-    description: "description",
-    href: "https://www.merriam-webster.com/dictionary/placeholder",
-    date: "date",
+    title: "the hackathon experience",
+    description: "in which i yap about hackathons from an attendee perspective",
+    href: "/blog_hackathons",
+    date: "6/3/2026",
   },
   {
     title: "title",
@@ -25,6 +25,7 @@ const BlogItems = [
 </style>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0  user-scalable=no">
 <title>variidian/blog</title>
+<p>for you non-upside-down-land dwellers, the date format used here is day/month/year (also, the only correct one)</p>
 
 <div class="grid">
   {Array.from({ length: 800 }).map(() => (

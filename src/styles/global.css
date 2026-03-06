@@ -83,6 +83,10 @@ h1 {
   color: rgb(202, 222, 151);
   margin-bottom: 10px;
 }
+h3 {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
 img {
   float: right;
   margin-top: 15px;
@@ -96,6 +100,7 @@ p {
   color: #fcfade;
   margin: 20px auto 0;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -121,4 +126,7 @@ a {
 span {
     color: rgb(202, 222, 151);
     font-style: italic;
+    }
+i {
+      margin-top: 10px;
     }
